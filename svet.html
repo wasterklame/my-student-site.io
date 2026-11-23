@@ -31,6 +31,7 @@
   .red { background: red; }
   .yellow { background: yellow; }
   .green { background: lime; }
+  .black { background: black; }
   button {
     margin-top: 15px;
     padding: 10px;
@@ -71,6 +72,7 @@
   const a2 = document.getElementById('a2');
   const a3 = document.getElementById('a3');
 
+
   const b1 = document.getElementById('b1');
   const b2 = document.getElementById('b2');
   const b3 = document.getElementById('b3');
@@ -80,6 +82,7 @@
     a2.className = 'lampa';
     a3.className = 'lampa';
 
+
     if (currentTop == 0) {
       a1.className = 'lampa red';
       currentTop = 1;
@@ -87,6 +90,12 @@
       a2.className = 'lampa yellow';
       currentTop = 2;
     } else if (currentTop == 2) {
+      a3.className = 'lampa green';
+      currentTop = 3;
+ }	  else if (currentTop == 3) {
+      a3.className = 'lampa black';
+      currentTop = 4;
+ } 	  else if (currentTop == 4) {
       a3.className = 'lampa green';
       currentTop = 0;
     }

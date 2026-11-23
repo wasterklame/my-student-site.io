@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="style.css" rel="stylesheet">
+<meta charset="UTF-8">
+ <div id="menu"><script language="JavaScript" src="menu.js" type="text/javascript"></script></div>
+<title>светофор</title>
+<style>
+  body {
+    font-family: Arial;
+    background: #ddd;
+  }
+  .korobka {
+    display: flex;
+    gap: 50px;
+    margin: 20px;
+  }
+  .svetofor {
+    background: black;
+    width: 80px;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  .lampa {
+    width: 60px;
+    height: 60px;
+    background: #333;
+    border-radius: 50%;
+    margin: 10px auto;
+  }
+  .red { background: red; }
+  .yellow { background: yellow; }
+  .green { background: lime; }
+  button {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 16px;
+  }
+</style>
+</head>
+<body>
+
+<h3>Антон Семиколенных</h3>
+
+<div class="korobka">
+  <div>
+    <p>Автомат</p>
+    <div class="svetofor">
+      <div id="a1" class="lampa"></div>
+      <div id="a2" class="lampa"></div>
+      <div id="a3" class="lampa"></div>
+    </div>
+  </div>
+
+  <div>
+    <p>От кнопки</p>
+    <div class="svetofor">
+      <div id="b1" class="lampa"></div>
+      <div id="b2" class="lampa"></div>
+      <div id="b3" class="lampa"></div>
+    </div>
+    <button onclick="perekluchit()">Нажать</button>
+  </div>
+</div>
+
+<script>
+  let currentTop = 0;
+  let currentBottom = 0;
+
+  const a1 = document.getElementById('a1');
+  const a2 = document.getElementById('a2');
+  const a3 = document.getElementById('a3');
+
+  const b1 = document.getElementById('b1');
+  const b2 = document.getElementById('b2');
+  const b3 = document.getElementById('b3');
+
+  function avtomat() {
+    a1.className = 'lampa';
+    a2.className = 'lampa';
+    a3.className = 'lampa';
+
+    if (currentTop == 0) {
+      a1.className = 'lampa red';
+      currentTop = 1;
+    } else if (currentTop == 1) {
+      a2.className = 'lampa yellow';
+      currentTop = 2;
+    } else if (currentTop == 2) {
+      a3.className = 'lampa green';
+      currentTop = 0;
+    }
+  }
+
+  function perekluchit() {
+    b1.className = 'lampa';
+    b2.className = 'lampa';
+    b3.className = 'lampa';
+
+    if (currentBottom == 0) {
+      b1.className = 'lampa red';
+      currentBottom = 1;
+    } else if (currentBottom == 1) {
+      b2.className = 'lampa yellow';
+      currentBottom = 2;
+    } else if (currentBottom == 2) {
+      b3.className = 'lampa green';
+      currentBottom = 0;
+    }
+  }
+
+  avtomat();
+  setInterval(avtomat, 1500);
+  perekluchit();
+</script>
+
+</body>
+</html>

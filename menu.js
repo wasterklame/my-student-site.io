@@ -17,7 +17,9 @@ document.write(
     ' ' +
     '<button onclick="location.href=\'play and  video.html\'">трек и видео</button>'+
 	' ' +
-    '<button onclick="location.href=\'kub.html\'">куб</button>'
+    '<button onclick="location.href=\'kub.html\'">куб</button>' +
+		' ' +
+    '<button onclick="location.href=\'svet.html\'">светофор</button>'
 );
 
 
